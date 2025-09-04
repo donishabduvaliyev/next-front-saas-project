@@ -1,8 +1,8 @@
 "use client"
 import { createContext, useContext, useState, useEffect } from "react"
-import en from "../i18n/en.json"
-import uz from "../i18n/uz.json"
-import ru from "../i18n/ru.json"
+import en from "@/app/i18/en.json"
+import uz from "@/app/i18/uz.json"
+import ru from "@/app/i18/ru.json"
 
 const translations = { en, uz, ru }
 
