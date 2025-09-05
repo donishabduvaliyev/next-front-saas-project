@@ -1,9 +1,11 @@
 import AllProductsPage from "@/app/templates/template-flower/allProduct/page";
 
-export default function ShopAll({ params }) {
-  if (params.pageslug !== "gulshan") {
-    return <h1>404 - This page doesn’t exist for {params.pageslug}</h1>;
+export default async function ShopAll({ params }) {
+const { pageslug } = await params;
+
+  if (pageslug !== "gulshan") {
+    return <h1>404 - This page doesn’t exist for {pageslug}</h1>;
   }
 
-  return <AllProductsPage />;
+  return <AllProductsPage pageslug={pageslug} />;
 }
