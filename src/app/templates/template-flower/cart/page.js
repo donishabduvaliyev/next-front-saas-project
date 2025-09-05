@@ -1,9 +1,13 @@
+'use client';
+
+
 import React from "react";
 import AnimatedPage from "../components/ui/animatePages";
-import { ArrowLeftIcon, ShoppingBagIcon, XMarkIcon } from "../components/ui/icons";
+import { ArrowLeftIcon, MinusIcon, PlusIcon, ShoppingBagIcon, XMarkIcon } from "../components/ui/icons";
 import { useCartContext } from "@/app/components/context/cartContext";
+import Link from "next/link";
 
-    const CartPage = () => {
+    const CartPage = ({pageslug}) => {
 const {cart, handleUpdateCart} = useCartContext();
 
 
@@ -20,9 +24,9 @@ const {cart, handleUpdateCart} = useCartContext();
                 <ShoppingBagIcon className="w-24 h-24 mx-auto text-gray-300 mb-6" />
                 <h2 className="text-3xl font-serif text-gray-800 mb-2">Your Bag is Empty</h2>
                 <p className="text-gray-500 mb-8">Looks like you haven't added any beautiful arrangements yet.</p>
-                <a href="/all"  className="bg-gray-800 text-white font-semibold py-3 px-8 rounded-full hover:bg-gray-700 transition-colors duration-300">
+                <Link href={`/${pageslug}/all`}  className="bg-gray-800 text-white font-semibold py-3 px-8 rounded-full hover:bg-gray-700 transition-colors duration-300">
                     Return to Shop
-                </a>
+                </Link>
             </AnimatedPage>
         );
     }

@@ -23,7 +23,7 @@ export default async function Page({ params }) {
         case "template-cosmetics":
             return <CosmeticsTemplate shop={shop} />;
         case "template-flower":
-            return <FlowerTemplate shop={shop} />;
+            return <FlowerTemplate shop={shop} pageslug={pageslug} />;
         case "template-outfit":
             return <OutfitTemplate shop={shop} />;
         case "template-outfit2":

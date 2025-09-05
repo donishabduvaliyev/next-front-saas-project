@@ -1,14 +1,17 @@
+'use client';
+import { useEffect, useMemo, useState } from "react";
 import AnimatedPage from "../components/ui/animatePages";
 import { SearchIcon } from "../components/ui/icons";
 import Pagination from "../components/ui/pagination";
 import ProductCard from "../components/ui/productCart";
+import products, {ITEMS_PER_PAGE , categories} from "@/app/templates/template-flower/data/data"
 
 const AllProductsPage = () => {
-    const [searchTerm, setSearchTerm] = React.useState('');
-    const [activeCategory, setActiveCategory] = React.useState('All');
-    const [currentPage, setCurrentPage] = React.useState(1);
+    const [searchTerm, setSearchTerm] = useState('');
+    const [activeCategory, setActiveCategory] = useState('All');
+    const [currentPage, setCurrentPage] = useState(1);
 
-    const filteredProducts = React.useMemo(() => {
+    const filteredProducts = useMemo(() => {
         return products
             .filter(p => activeCategory === 'All' || p.category === activeCategory)
             .filter(p => p.name.toLowerCase().includes(searchTerm.toLowerCase()));
@@ -17,8 +20,8 @@ const AllProductsPage = () => {
     const totalPages = Math.ceil(filteredProducts.length / ITEMS_PER_PAGE);
     const paginatedProducts = filteredProducts.slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE);
 
-    React.useEffect(() => {
-        setCurrentPage(1); // Reset to first page on filter change
+    useEffect(() => {
+        setCurrentPage(1);
     }, [searchTerm, activeCategory]);
 
     return (

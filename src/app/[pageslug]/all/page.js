@@ -1,4 +1,4 @@
-import AllProductsPage from "@/app/templates/template-flower/allProduct/flowershopAll";
+import AllProductsPage from "@/app/templates/template-flower/allProduct/page";
 
 export default function ShopAll({ params }) {
   if (params.pageslug !== "gulshan") {

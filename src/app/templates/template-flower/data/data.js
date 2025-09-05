@@ -1,4 +1,4 @@
-export const products = [
+const products = [
     { id: 1, name: 'Ethereal White', price: 250, category: 'Bouquets', image: 'https://placehold.co/600x800/f0f2f5/a89a8d?text=Fleur+1' },
     { id: 2, name: 'Velvet Rouge', price: 280, category: 'Bouquets', image: 'https://placehold.co/600x800/f0f2f5/a89a8d?text=Fleur+2' },
     { id: 3, name: 'Golden Hour', price: 320, category: 'Vases', image: 'https://placehold.co/600x800/f0f2f5/a89a8d?text=Fleur+3' },
@@ -12,5 +12,7 @@ export const products = [
     { id: 11, name: 'Orchid Cascade', price: 520, category: 'Centerpieces', image: 'https://placehold.co/600x800/f0f2f5/a89a8d?text=Fleur+11' },
     { id: 12, name: 'Midnight Bloom', price: 330, category: 'Arrangements', image: 'https://placehold.co/600x800/f0f2f5/a89a8d?text=Fleur+12' },
 ];
- export const categories = ['All', ...new Set(products.map(p => p.category))];
- export const ITEMS_PER_PAGE = 6;
+export default products;
+export const categories = ['All', ...new Set(products.map(p => p.category))];
+export const ITEMS_PER_PAGE = 6;
+// export default {products, categories, ITEMS_PER_PAGE};

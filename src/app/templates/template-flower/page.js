@@ -11,10 +11,10 @@ import { useI18n } from "@/app/components/context/i18context";
 import { useCartContext } from "@/app/components/context/cartContext";
 
 
-export default function FlowerTemplate({ shop }) {
+export default function FlowerTemplate({ pageslug }) {
     const router = useRouter();
      const { t, lang, changeLang } = useI18n()
-     const {cart , pageslug} = useCartContext();
+     const {cart } = useCartContext();
      
 
  

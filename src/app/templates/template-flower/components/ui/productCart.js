@@ -1,8 +1,9 @@
 import { useCartContext } from "@/app/components/context/cartContext";
 import { PlusIcon } from "./icons";
+import { useState } from "react";
 
 const ProductCard = ({ product }) => {
-    const [isHovered, setIsHovered] = React.useState(false);
+    const [isHovered, setIsHovered] = useState(false);
     const { handleAddToCart } = useCartContext();
 
     return (
